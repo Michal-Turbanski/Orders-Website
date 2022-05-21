@@ -1,7 +1,5 @@
 {
     "compilerOptions": {
-        "rootDir": "./src",
-        "outDir": "",
         "target": "ES2022"
     }
 }
