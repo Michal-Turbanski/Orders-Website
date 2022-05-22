@@ -1,3 +1,5 @@
+const Order = require('../db/models/Order');
+
 const getOrders = async (req, res) => {
     res.json({
         message: 'Get all orders'
@@ -5,9 +7,9 @@ const getOrders = async (req, res) => {
 }
 
 const createOrder = async (req, res) => {
-    res.json({
-        message: 'Create order'
-    });
+    await Order.create(req.body);
+
+    res.json(req.body);
 }
 
 const updateOrder = async (req, res) => {
