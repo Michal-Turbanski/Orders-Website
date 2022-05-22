@@ -9,7 +9,16 @@
 </head>
 
 <body>
-
+    <% orders.forEach((order)=> { %>
+        <h1>ID: <%= order.id %>
+        </h1>
+        <h2>Name: <%= order.name %>
+        </h2>
+        <p>Price: <%= order.price %> zł</p>
+        <p>Quantity: <%= order.quantity %>
+        </p>
+        =======================================
+        <% }) %>
 </body>
 
 </html>

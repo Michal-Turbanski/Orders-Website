@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const colors = require('colors');
 const sequelize = require('./db/dbConnect');
+const axios = require('axios').default;
 
 const port = Number(process.env.PORT) || 3000;
 
@@ -17,8 +18,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/api/orders', require('./routes/orderRoutes'));
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.get('/', async (req, res) => {
+    try {
+        const { data } = await axios.get(`http://127.0.0.1:${port}/api/orders`);
+        res.render('index', { orders: data });
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 app.listen(port, () => {
