@@ -24,7 +24,8 @@ Order.init({
     }
 }, {
     sequelize,
-    modelName: 'order'
+    modelName: 'order',
+    timestamps: false
 })
 
 module.exports = Order;

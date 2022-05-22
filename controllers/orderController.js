@@ -1,9 +1,12 @@
 const Order = require('../db/models/Order');
 
 const getOrders = async (req, res) => {
-    res.json({
-        message: 'Get all orders'
-    });
+    try {
+        const orders = await Order.findAll();
+        res.json(orders)
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const createOrder = async (req, res) => {
