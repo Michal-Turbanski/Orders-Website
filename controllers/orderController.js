@@ -23,9 +23,12 @@ const getOrder = async (req, res) => {
 }
 
 const createOrder = async (req, res) => {
-    await Order.create(req.body);
-
-    res.json(req.body);
+    try {
+        await Order.create(req.body);
+        res.sendStatus(201);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const updateOrder = async (req, res) => {
