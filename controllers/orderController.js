@@ -9,6 +9,19 @@ const getOrders = async (req, res) => {
     }
 }
 
+const getOrder = async (req, res) => {
+    try {
+        const order = await Order.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.json(order);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const createOrder = async (req, res) => {
     await Order.create(req.body);
 
@@ -29,6 +42,7 @@ const deleteOrder = async (req, res) => {
 
 module.exports = {
     getOrders,
+    getOrder,
     createOrder,
     updateOrder,
     deleteOrder
