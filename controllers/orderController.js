@@ -32,9 +32,16 @@ const createOrder = async (req, res) => {
 }
 
 const updateOrder = async (req, res) => {
-    res.json({
-        message: `Update order ${req.params.id}`
-    });
+    try {
+        await Order.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.sendStatus(200);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const deleteOrder = async (req, res) => {
