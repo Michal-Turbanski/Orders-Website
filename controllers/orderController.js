@@ -45,9 +45,26 @@ const updateOrder = async (req, res) => {
 }
 
 const deleteOrder = async (req, res) => {
-    res.json({
-        message: `Delete order ${req.params.id}`
-    });
+    try {
+        const order = await Order.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        if (order) {
+            Order.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.sendStatus(200);
+        } else {
+            res.sendStatus(400);
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 module.exports = {
