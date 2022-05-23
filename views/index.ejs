@@ -11,20 +11,42 @@
 </head>
 
 <body>
-    <% orders.forEach((order)=> { %>
-        <h1>ID: <%= order.id %>
-        </h1>
-        <h2>Name: <%= order.name %>
-        </h2>
-        <p>Price: <%= order.price %> zł</p>
-        <p>Quantity: <%= order.quantity %>
-        </p>
-        =======================================
-        <% }) %>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% orders.forEach((order, index)=> { %>
+                <tr>
+                    <th scope="row">
+                        <%= index + 1 %>
+                    </th>
+                    <td>
+                        <%= order.id %>
+                    </td>
+                    <td>
+                        <%= order.name %>
+                    </td>
+                    <td>
+                        <%= order.price %> USD
+                    </td>
+                    <td>
+                        <%= order.quantity %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-                crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
