@@ -1,20 +1,21 @@
 <%- include('partials/head'); -%>
     <%- include('partials/nav'); -%>
 
-        <h1 class="text-center">Edit order</h1>
+        <h1 class="text-center">Edit order <%= order.id %>
+        </h1>
 
         <form>
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control nameInput" name="name">
+                <input value="<%= order.name %>" type="text" class="form-control nameInput" name="name">
             </div>
             <div class="mb-3">
-                <label for="price" class="form-label">Price</label>
-                <input type="number" class="form-control priceInput" name="price">
+                <label for="price" class="form-label">Price in USD</label>
+                <input value="<%= order.price %>" type="number" class="form-control priceInput" name="price">
             </div>
             <div class="mb-3">
                 <label for="quantity" class="form-label">Quantity</label>
-                <input type="number" class="form-control quantityInput" name="quantity">
+                <input value="<%= order.quantity %>" type="number" class="form-control quantityInput" name="quantity">
             </div>
             <button type="submit" class="btn btn-success submit">Create order</button>
         </form>
