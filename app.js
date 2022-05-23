@@ -33,6 +33,12 @@ app.get('/create', (req, res) => {
     res.render('create')
 })
 
+app.get(`/edit/:id`, async (req, res) => {
+    const { data } = await axios.get(`http://127.0.0.1:${port}/api/orders/${req.params.id}`);
+    console.log(data);
+    res.render('edit', { order: data });
+})
+
 app.listen(port, () => {
     console.log(`App is listening on port ${port}`);
 });

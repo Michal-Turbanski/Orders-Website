@@ -31,7 +31,7 @@
                         <td>
                             <%= order.quantity %>
                         </td>
-                        <td><button class="btn btn-info">Edit</button></td>
+                        <td><button value="<%= order.id %>" class="btn btn-info editButton">Edit</button></td>
                         <td><button value="<%= order.id %>" class="btn btn-danger deleteButton">Delete</button></td>
                     </tr>
                     <% }) %>
@@ -39,5 +39,6 @@
         </table>
 
         <script src="/js/sendDelete.js"></script>
+        <script src="/js/editButtonRedirect.js"></script>
 
         <%- include('partials/footer'); -%>

@@ -1,0 +1,22 @@
+<%- include('partials/head'); -%>
+    <%- include('partials/nav'); -%>
+
+        <h1 class="text-center">Edit order</h1>
+
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control nameInput" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control priceInput" name="price">
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control quantityInput" name="quantity">
+            </div>
+            <button type="submit" class="btn btn-success submit">Create order</button>
+        </form>
+
+        <%- include('partials/footer'); -%>
