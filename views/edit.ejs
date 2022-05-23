@@ -17,7 +17,9 @@
                 <label for="quantity" class="form-label">Quantity</label>
                 <input value="<%= order.quantity %>" type="number" class="form-control quantityInput" name="quantity">
             </div>
-            <button type="submit" class="btn btn-success submit">Create order</button>
+            <button value="<%= order.id %>" class="btn btn-info confirmEditButton">Edit order</button>
         </form>
+
+        <script src="/js/sendPut.js"></script>
 
         <%- include('partials/footer'); -%>
