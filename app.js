@@ -27,6 +27,10 @@ app.get('/', async (req, res) => {
     }
 })
 
+app.get('/create', (req, res) => {
+    res.render('create')
+})
+
 app.listen(port, () => {
     console.log(`App is listening on port ${port}`);
 });
