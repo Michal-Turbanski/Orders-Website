@@ -20,10 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/api/orders', require('./routes/orderRoutes'));
 app.use('/', require('./routes/mainRoute'));
-
-app.get('/create', (req, res) => {
-    res.render('create')
-})
+app.use('/create', require('./routes/createRoute'))
 
 app.get(`/edit/:id`, async (req, res) => {
     const { data } = await axios.get(`http://127.0.0.1:${port}/api/orders/${req.params.id}`);
