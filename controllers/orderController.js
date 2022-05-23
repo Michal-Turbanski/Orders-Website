@@ -60,7 +60,7 @@ const deleteOrder = async (req, res) => {
             })
             res.sendStatus(200);
         } else {
-            res.sendStatus(400);
+            res.sendStatus(404);
         }
     } catch (error) {
         console.log(error);
