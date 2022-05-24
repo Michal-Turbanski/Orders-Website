@@ -8,11 +8,11 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="number" class="form-control priceInput" name="price">
+                <input type="number" class="form-control priceInput" name="price" min="0">
             </div>
             <div class="mb-3">
                 <label for="quantity" class="form-label">Quantity</label>
-                <input type="number" class="form-control quantityInput" name="quantity">
+                <input type="number" class="form-control quantityInput" name="quantity" min="1">
             </div>
             <button type="submit" class="btn btn-success submit">Create order</button>
         </form>
