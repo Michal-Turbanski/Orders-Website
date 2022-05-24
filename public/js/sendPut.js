@@ -12,6 +12,7 @@ confirmEditButton.addEventListener('click', (e) => {
 
     if (nameValue && priceValue && quantityValue) {
 
+        // eslint-disable-next-line no-undef
         axios.put(`/api/orders/${confirmEditButton.value}`, {
             name: nameValue,
             price: priceValue,
