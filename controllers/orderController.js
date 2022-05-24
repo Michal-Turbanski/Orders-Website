@@ -24,8 +24,14 @@ const getOrder = async (req, res) => {
 
 const createOrder = async (req, res) => {
     try {
-        await Order.create(req.body);
-        res.sendStatus(201);
+        const { name, price, quantity } = req.body;
+        if (name && price && quantity) {
+            await Order.create(req.body);
+            res.sendStatus(201);
+        } else {
+            res.sendStatus(400);
+        }
+
     } catch (error) {
         console.log(error);
     }
