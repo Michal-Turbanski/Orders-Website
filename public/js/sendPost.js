@@ -12,6 +12,7 @@ submitButton.addEventListener('click', (e) => {
 
     if (nameValue && priceValue && quantityValue) {
 
+        // eslint-disable-next-line no-undef
         axios.post('/api/orders', {
             name: nameValue,
             price: priceValue,
