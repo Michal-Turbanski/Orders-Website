@@ -39,6 +39,13 @@ const createOrder = async (req, res) => {
 
 const updateOrder = async (req, res) => {
     try {
+        const order = await Order.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        if (!order) res.sendStatus(404);
+
         const { name, price, quantity } = req.body;
         if (name && price && quantity) {
             await Order.update(req.body, {
