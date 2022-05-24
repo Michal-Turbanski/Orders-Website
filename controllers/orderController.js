@@ -39,12 +39,17 @@ const createOrder = async (req, res) => {
 
 const updateOrder = async (req, res) => {
     try {
-        await Order.update(req.body, {
-            where: {
-                id: req.params.id
-            }
-        })
-        res.sendStatus(200);
+        const { name, price, quantity } = req.body;
+        if (name && price && quantity) {
+            await Order.update(req.body, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.sendStatus(200);
+        } else {
+            res.sendStatus(400);
+        }
     } catch (error) {
         console.log(error);
     }
