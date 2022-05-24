@@ -10,16 +10,21 @@ confirmEditButton.addEventListener('click', (e) => {
     const priceValue = priceInput.value;
     const quantityValue = quantityInput.value;
 
-    axios.put(`/api/orders/${confirmEditButton.value}`, {
-        name: nameValue,
-        price: priceValue,
-        quantity: quantityValue
-    })
-        .then(function (response) {
-            console.log(response);
-            window.location.href = "/";
+    if (nameValue && priceValue && quantityValue) {
+
+        axios.put(`/api/orders/${confirmEditButton.value}`, {
+            name: nameValue,
+            price: priceValue,
+            quantity: quantityValue
         })
-        .catch(function (error) {
-            console.log(error);
-        });
+            .then(function (response) {
+                console.log(response);
+                window.location.href = "/";
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    } else {
+        alert('You have to give all three values')
+    }
 })
