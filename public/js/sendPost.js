@@ -1,7 +1,11 @@
 "use strict";
+//@ts-ignore
 const nameInput = document.querySelector('input.nameInput');
+//@ts-ignore
 const priceInput = document.querySelector('input.priceInput');
+//@ts-ignore
 const quantityInput = document.querySelector('input.quantityInput');
+//@ts-ignore
 const submitButton = document.querySelector('button.submit');
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -9,7 +13,7 @@ submitButton.addEventListener('click', (e) => {
     const priceValue = priceInput.value;
     const quantityValue = quantityInput.value;
     if (nameValue && priceValue && quantityValue) {
-        // eslint-disable-next-line no-undef
+        // @ts-ignore
         axios.post('/api/orders', {
             name: nameValue,
             price: priceValue,

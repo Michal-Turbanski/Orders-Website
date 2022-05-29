@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.edit = void 0;
 // @ts-ignore
 const axios = require('axios').default;
 // @ts-ignore
@@ -17,4 +19,4 @@ const edit = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(data);
     res.render('edit', { order: data });
 });
-module.exports = { edit };
+exports.edit = edit;

@@ -1,6 +1,10 @@
+//@ts-ignore
 const confirmEditButton: HTMLButtonElement = document.querySelector('button.confirmEditButton');
+//@ts-ignore
 const nameInput: HTMLInputElement = document.querySelector('input.nameInput');
+//@ts-ignore
 const priceInput: HTMLInputElement = document.querySelector('input.priceInput');
+//@ts-ignore
 const quantityInput: HTMLInputElement = document.querySelector('input.quantityInput');
 
 confirmEditButton.addEventListener('click', (e) => {
@@ -12,17 +16,17 @@ confirmEditButton.addEventListener('click', (e) => {
 
     if (nameValue && priceValue && quantityValue) {
 
-        // eslint-disable-next-line no-undef
+        //@ts-ignore
         axios.put(`/api/orders/${confirmEditButton.value}`, {
             name: nameValue,
             price: priceValue,
             quantity: quantityValue
         })
-            .then(function (response) {
+            .then(function (response: Response) {
                 console.log(response);
                 window.location.href = "/";
             })
-            .catch(function (error) {
+            .catch(function (error: Error) {
                 console.log(error);
             });
     } else {

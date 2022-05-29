@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getMain = void 0;
 // @ts-ignore
 const Order = require('../db/models/Order');
 // @ts-ignore
@@ -52,4 +54,4 @@ const getMain = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
 });
-module.exports = { getMain };
+exports.getMain = getMain;

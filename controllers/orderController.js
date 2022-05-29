@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteOrder = exports.updateOrder = exports.createOrder = exports.getOrder = exports.getOrders = void 0;
 // @ts-ignore
 const Order = require('../db/models/Order');
 const getOrders = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -19,6 +21,7 @@ const getOrders = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         console.log(error);
     }
 });
+exports.getOrders = getOrders;
 const getOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const order = yield Order.findOne({
@@ -32,6 +35,7 @@ const getOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         console.log(error);
     }
 });
+exports.getOrder = getOrder;
 const createOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, price, quantity } = req.body;
@@ -47,6 +51,7 @@ const createOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         console.log(error);
     }
 });
+exports.createOrder = createOrder;
 const updateOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const order = yield Order.findOne({
@@ -73,6 +78,7 @@ const updateOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         console.log(error);
     }
 });
+exports.updateOrder = updateOrder;
 const deleteOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const order = yield Order.findOne({
@@ -96,10 +102,4 @@ const deleteOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         console.log(error);
     }
 });
-module.exports = {
-    getOrders,
-    getOrder,
-    createOrder,
-    updateOrder,
-    deleteOrder
-};
+exports.deleteOrder = deleteOrder;
