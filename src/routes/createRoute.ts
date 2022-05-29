@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { edit } = require('../controllers/editController');
-router.get('/:id', edit);
+const { create } = require('../controllers/createController')
+
+router.get('/', create);
+
 module.exports = router;
