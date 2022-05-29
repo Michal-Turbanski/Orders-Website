@@ -4,6 +4,7 @@ const colors = require('colors');
 const sequelize = require('./db/dbConnect');
 const path = require('path');
 
+// @ts-ignore
 const port: number = Number(process.env.PORT) || 3000;
 
 sequelize.sync()

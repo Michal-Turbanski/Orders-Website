@@ -3,6 +3,7 @@ const dotenv = require('dotenv').config();
 const colors = require('colors');
 const sequelize = require('./db/dbConnect');
 const path = require('path');
+// @ts-ignore
 const port = Number(process.env.PORT) || 3000;
 sequelize.sync()
     // @ts-ignore
