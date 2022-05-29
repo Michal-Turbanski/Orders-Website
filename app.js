@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const colors = require('colors');
+//@ts-ignore
 const sequelize = require('./db/dbConnect');
 const path = require('path');
 // @ts-ignore

@@ -1,8 +1,10 @@
+// @ts-ignore
 const Order = require('../db/models/Order');
 // @ts-ignore
 const axios = require('axios').default;
 // @ts-ignore
 const port: number = Number(process.env.PORT) || 3000;
+//@ts-ignore
 const { Sequelize } = require('sequelize');
 const Op = Sequelize.Op;
 

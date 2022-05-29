@@ -7,11 +7,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+// @ts-ignore
 const Order = require('../db/models/Order');
 // @ts-ignore
 const axios = require('axios').default;
 // @ts-ignore
 const port = Number(process.env.PORT) || 3000;
+//@ts-ignore
 const { Sequelize } = require('sequelize');
 const Op = Sequelize.Op;
 const getMain = (req, res) => __awaiter(this, void 0, void 0, function* () {

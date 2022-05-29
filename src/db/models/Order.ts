@@ -2,8 +2,8 @@ const { Model, DataTypes } = require("sequelize");
 //@ts-ignore
 const sequelize = require('../dbConnect');
 //@ts-ignore
-class Order extends Model {
-}
+class Order extends Model { }
+
 Order.init({
     id: {
         type: DataTypes.INTEGER,
@@ -27,5 +27,6 @@ Order.init({
     sequelize,
     modelName: 'order',
     timestamps: false
-});
+})
+
 module.exports = Order;
