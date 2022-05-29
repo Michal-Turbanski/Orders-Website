@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 
 import { createRouter } from './routes/createRoute';
 import { editRouter } from './routes/editRoute';
+import { mainRouter } from './routes/mainRoute';
 
 const dotenv = require('dotenv').config();
 const colors = require('colors');
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use('/api/orders', require('./routes/orderRoutes'));
-app.use('/', require('./routes/mainRoute'));
+app.use('/', mainRouter);
 app.use('/create', createRouter);
 app.use('/edit', editRouter);
 
