@@ -1,3 +1,4 @@
+"use strict";
 //@ts-ignore
 const { Sequelize } = require('sequelize');
 const dbName = process.env.DB_NAME || 'ordersDB';

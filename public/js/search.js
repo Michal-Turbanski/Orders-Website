@@ -1,3 +1,4 @@
+"use strict";
 const searchButton = document.querySelector('button.searchButton');
 const searchInput = document.querySelector('input.searchInput');
 searchButton.addEventListener('click', (e) => {

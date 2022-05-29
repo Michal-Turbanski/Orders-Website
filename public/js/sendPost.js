@@ -1,3 +1,4 @@
+"use strict";
 const nameInput = document.querySelector('input.nameInput');
 const priceInput = document.querySelector('input.priceInput');
 const quantityInput = document.querySelector('input.quantityInput');

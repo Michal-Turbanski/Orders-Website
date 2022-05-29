@@ -1,3 +1,4 @@
+"use strict";
 const confirmEditButton = document.querySelector('button.confirmEditButton');
 const nameInput = document.querySelector('input.nameInput');
 const priceInput = document.querySelector('input.priceInput');

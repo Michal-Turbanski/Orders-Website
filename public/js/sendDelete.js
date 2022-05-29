@@ -1,3 +1,4 @@
+"use strict";
 const deleteButtons = document.querySelectorAll('button.deleteButton');
 deleteButtons.forEach((deleteButton) => {
     deleteButton.addEventListener('click', () => {

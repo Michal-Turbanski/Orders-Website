@@ -1,3 +1,4 @@
+"use strict";
 const { Model, DataTypes } = require("sequelize");
 //@ts-ignore
 const sequelize = require('../dbConnect');

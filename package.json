@@ -4,7 +4,9 @@
   "description": "Orders website with SQL database",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc -p ."
   },
   "author": "Michał Turbański",
   "license": "MIT",
