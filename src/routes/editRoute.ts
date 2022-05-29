@@ -1,7 +1,5 @@
-const express = require('express');
-const router = express.Router();
-const { edit } = require('../controllers/editController')
+import express from 'express';
+import { edit } from '../controllers/editController';
+export const editRouter = express.Router();
 
 router.get('/:id', edit);
-
-module.exports = router;

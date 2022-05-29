@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 
 import { createRouter } from './routes/createRoute';
+import { editRouter } from './routes/editRoute';
 
 const dotenv = require('dotenv').config();
 const colors = require('colors');
@@ -28,7 +29,7 @@ app.use(express.json());
 app.use('/api/orders', require('./routes/orderRoutes'));
 app.use('/', require('./routes/mainRoute'));
 app.use('/create', createRouter);
-app.use('/edit', require('./routes/editRoute'));
+app.use('/edit', editRouter);
 
 app.listen(port, () => {
     console.log(`App is listening on port ${port}`);
