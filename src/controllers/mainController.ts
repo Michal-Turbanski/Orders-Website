@@ -1,3 +1,4 @@
+import { Request, Response } from 'express';
 // @ts-ignore
 const Order = require('../db/models/Order');
 // @ts-ignore
@@ -8,7 +9,7 @@ const port: number = Number(process.env.PORT) || 3000;
 const { Sequelize } = require('sequelize');
 const Op = Sequelize.Op;
 
-const getMain = async (req, res) => {
+export const getMain = async (req: Request, res: Response) => {
     if (!req.query.search) {
         try {
             const { data } = await axios.get(`http://127.0.0.1:${port}/api/orders`);
@@ -40,5 +41,3 @@ const getMain = async (req, res) => {
         }
     }
 }
-
-module.exports = { getMain }

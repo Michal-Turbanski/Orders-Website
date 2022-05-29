@@ -1,4 +1,4 @@
-const express = require('express');
+import express, { Application } from 'express';
 const dotenv = require('dotenv').config();
 const colors = require('colors');
 //@ts-ignore
@@ -14,7 +14,7 @@ sequelize.sync()
     // @ts-ignore
     .catch((err) => console.log(`${err}`.red));
 
-const app = express();
+const app: Application = express();
 
 app.set('view engine', 'ejs');
 

@@ -1,5 +1,5 @@
-const create = (req, res) => {
+import { Request, Response } from 'express';
+
+export const create = (req: Request, res: Response) => {
     res.render('create');
 }
-
-module.exports = { create }

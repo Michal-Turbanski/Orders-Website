@@ -1,7 +1,9 @@
+import { Request, Response } from 'express';
+
 // @ts-ignore
 const Order = require('../db/models/Order');
 
-const getOrders = async (req, res) => {
+export const getOrders = async (req: Request, res: Response) => {
     try {
         const orders = await Order.findAll();
         res.json(orders)
@@ -10,7 +12,7 @@ const getOrders = async (req, res) => {
     }
 }
 
-const getOrder = async (req, res) => {
+export const getOrder = async (req: Request, res: Response) => {
     try {
         const order = await Order.findOne({
             where: {
@@ -23,7 +25,7 @@ const getOrder = async (req, res) => {
     }
 }
 
-const createOrder = async (req, res) => {
+export const createOrder = async (req: Request, res: Response) => {
     try {
         const { name, price, quantity } = req.body;
         if (name && price && quantity) {
@@ -38,7 +40,7 @@ const createOrder = async (req, res) => {
     }
 }
 
-const updateOrder = async (req, res) => {
+export const updateOrder = async (req: Request, res: Response) => {
     try {
         const order = await Order.findOne({
             where: {
@@ -63,7 +65,7 @@ const updateOrder = async (req, res) => {
     }
 }
 
-const deleteOrder = async (req, res) => {
+export const deleteOrder = async (req: Request, res: Response) => {
     try {
         const order = await Order.findOne({
             where: {
@@ -84,12 +86,4 @@ const deleteOrder = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-}
-
-module.exports = {
-    getOrders,
-    getOrder,
-    createOrder,
-    updateOrder,
-    deleteOrder
 }
