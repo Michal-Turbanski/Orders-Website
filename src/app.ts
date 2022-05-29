@@ -1,4 +1,7 @@
 import express, { Application } from 'express';
+
+import { createRouter } from './routes/createRoute';
+
 const dotenv = require('dotenv').config();
 const colors = require('colors');
 //@ts-ignore
@@ -24,7 +27,7 @@ app.use(express.json());
 
 app.use('/api/orders', require('./routes/orderRoutes'));
 app.use('/', require('./routes/mainRoute'));
-app.use('/create', require('./routes/createRoute'))
+app.use('/create', createRouter);
 app.use('/edit', require('./routes/editRoute'));
 
 app.listen(port, () => {
