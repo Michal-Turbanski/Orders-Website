@@ -8,12 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMain = void 0;
 const Order_1 = require("../db/models/Order");
-// @ts-ignore
-const axios = require('axios').default;
-// @ts-ignore
+const axios_1 = __importDefault(require("axios"));
 const port = Number(process.env.PORT) || 3000;
 //@ts-ignore
 const { Sequelize } = require('sequelize');
@@ -21,7 +22,7 @@ const Op = Sequelize.Op;
 const getMain = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.query.search) {
         try {
-            const { data } = yield axios.get(`http://127.0.0.1:${port}/api/orders`);
+            const { data } = yield axios_1.default.get(`http://127.0.0.1:${port}/api/orders`);
             res.render('index', { orders: data, search: false });
         }
         catch (error) {

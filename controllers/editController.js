@@ -8,15 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.edit = void 0;
-// @ts-ignore
-const axios = require('axios').default;
-// @ts-ignore
+const axios_1 = __importDefault(require("axios"));
 const port = Number(process.env.PORT) || 3000;
 const edit = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { data } = yield axios.get(`http://127.0.0.1:${port}/api/orders/${req.params.id}`);
-    console.log(data);
+    const { data } = yield axios_1.default.get(`http://127.0.0.1:${port}/api/orders/${req.params.id}`);
     res.render('edit', { order: data });
 });
 exports.edit = edit;

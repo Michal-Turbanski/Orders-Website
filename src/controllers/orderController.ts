@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-
 import { Order } from '../db/models/Order';
 
 export const getOrders = async (req: Request, res: Response) => {
