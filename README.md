@@ -26,7 +26,7 @@ Application uses sqlite3 as a database. If you have MacOS sqlite is preinstalled
 
 On this Website you can read all the orders from main page. You can also delete and update them and of course creating new ones. From navbar you can searching order by name and ID. Website fully supports RWD.
 
-## Postman
+## Postman tests
 Link to postman API tests: 
 [link](https://documenter.getpostman.com/view/15325905/Uz59MyVT)
 
