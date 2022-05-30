@@ -1,11 +1,8 @@
 "use strict";
-//@ts-ignore
+Object.defineProperty(exports, "__esModule", { value: true });
 const nameInput = document.querySelector('input.nameInput');
-//@ts-ignore
 const priceInput = document.querySelector('input.priceInput');
-//@ts-ignore
 const quantityInput = document.querySelector('input.quantityInput');
-//@ts-ignore
 const submitButton = document.querySelector('button.submit');
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
