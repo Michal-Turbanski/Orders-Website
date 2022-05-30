@@ -70,4 +70,19 @@ describe('order', () => {
                 .expect(404);
         }));
     });
+    describe('DELETE order (not exist)', () => {
+        it('should return 404 Not Found', () => __awaiter(void 0, void 0, void 0, function* () {
+            const id = 404; //not exist
+            yield (0, supertest_1.default)(app_1.app).delete(`/api/orders/${id}`)
+                .expect(404);
+        }));
+    });
+    //this test is not very good without fake DB, because we can delete them only once (if exist) and then it'll be throwing errors 404
+    describe('DELETE order', () => {
+        it('should return 200', () => __awaiter(void 0, void 0, void 0, function* () {
+            const id = 15;
+            yield (0, supertest_1.default)(app_1.app).delete(`/api/orders/${id}`)
+                .expect(200);
+        }));
+    });
 });
