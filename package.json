@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon src/app.ts",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "test": "jest"
   },
   "author": "Michał Turbański",
   "license": "MIT",
@@ -23,6 +24,14 @@
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.36",
     "eslint": "^8.16.0",
+    "jest": "^28.1.0",
+    "supertest": "^6.2.3",
     "ts-node": "^10.8.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
