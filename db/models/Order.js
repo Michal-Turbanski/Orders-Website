@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Order = void 0;
 const sequelize_1 = require("sequelize");
 const dbConnect_1 = require("../dbConnect");
 class Order extends sequelize_1.Model {
 }
+exports.Order = Order;
 Order.init({
     id: {
         type: sequelize_1.DataTypes.INTEGER,
@@ -28,4 +30,3 @@ Order.init({
     modelName: 'order',
     timestamps: false
 });
-module.exports = Order;

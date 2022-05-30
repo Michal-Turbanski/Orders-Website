@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-// @ts-ignore
-const Order = require('../db/models/Order');
+import { Order } from '../db/models/Order';
+
 // @ts-ignore
 const axios = require('axios').default;
 // @ts-ignore

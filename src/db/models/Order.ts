@@ -1,7 +1,7 @@
 import { Model, DataTypes } from "sequelize";
 import { sequelize } from '../dbConnect';
 
-class Order extends Model { }
+export class Order extends Model { }
 
 Order.init({
     id: {
@@ -27,5 +27,3 @@ Order.init({
     modelName: 'order',
     timestamps: false
 })
-
-module.exports = Order;

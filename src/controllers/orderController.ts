@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 
-// @ts-ignore
-const Order = require('../db/models/Order');
+import { Order } from '../db/models/Order';
 
 export const getOrders = async (req: Request, res: Response) => {
     try {

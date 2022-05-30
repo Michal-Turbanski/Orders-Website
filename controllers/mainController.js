@@ -10,8 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMain = void 0;
-// @ts-ignore
-const Order = require('../db/models/Order');
+const Order_1 = require("../db/models/Order");
 // @ts-ignore
 const axios = require('axios').default;
 // @ts-ignore
@@ -33,7 +32,7 @@ const getMain = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const { search } = req.query;
         console.log(typeof search);
         try {
-            const orders = yield Order.findAll({
+            const orders = yield Order_1.Order.findAll({
                 where: {
                     [Op.or]: [{
                             id: {
