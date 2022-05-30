@@ -29,3 +29,10 @@ On this Website you can read all the orders from main page. You can also delete 
 ## Postman
 Link to postman API tests: 
 [link](https://documenter.getpostman.com/view/15325905/Uz59MyVT)
+
+## Tests
+
+App use Jest and Supertest package for unit tests API.
+
+<img width="477" alt="testsAPI" src="https://user-images.githubusercontent.com/63620671/171045961-0ec082a1-957f-4c92-9940-fcc17c7ab4aa.png">
+
