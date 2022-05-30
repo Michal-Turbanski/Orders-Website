@@ -15,9 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMain = void 0;
 const Order_1 = require("../db/models/Order");
 const axios_1 = __importDefault(require("axios"));
-const port = Number(process.env.PORT) || 3000;
-//@ts-ignore
 const { Sequelize } = require('sequelize');
+const port = Number(process.env.PORT) || 3000;
 const Op = Sequelize.Op;
 const getMain = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.query.search) {

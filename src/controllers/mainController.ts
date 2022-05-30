@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import { Order } from '../db/models/Order';
 import axios from 'axios';
+const { Sequelize } = require('sequelize');
 
 const port: number = Number(process.env.PORT) || 3000;
-//@ts-ignore
-const { Sequelize } = require('sequelize');
+
 const Op = Sequelize.Op;
 
 export const getMain = async (req: Request, res: Response) => {
