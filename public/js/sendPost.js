@@ -1,14 +1,13 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const nameInput = document.querySelector('input.nameInput');
-const priceInput = document.querySelector('input.priceInput');
-const quantityInput = document.querySelector('input.quantityInput');
+const nameInputPost = document.querySelector('input.nameInput');
+const priceInputPost = document.querySelector('input.priceInput');
+const quantityInputPost = document.querySelector('input.quantityInput');
 const submitButton = document.querySelector('button.submit');
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
-    const nameValue = nameInput.value;
-    const priceValue = priceInput.value;
-    const quantityValue = quantityInput.value;
+    const nameValue = nameInputPost.value;
+    const priceValue = priceInputPost.value;
+    const quantityValue = quantityInputPost.value;
     if (nameValue && priceValue && quantityValue) {
         // @ts-ignore
         axios.post('/api/orders', {

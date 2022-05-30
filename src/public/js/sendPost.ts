@@ -1,14 +1,14 @@
-const nameInput = document.querySelector('input.nameInput') as HTMLInputElement;
-const priceInput = document.querySelector('input.priceInput') as HTMLInputElement;
-const quantityInput = document.querySelector('input.quantityInput') as HTMLInputElement;
+const nameInputPost = document.querySelector('input.nameInput') as HTMLInputElement;
+const priceInputPost = document.querySelector('input.priceInput') as HTMLInputElement;
+const quantityInputPost = document.querySelector('input.quantityInput') as HTMLInputElement;
 const submitButton = document.querySelector('button.submit') as HTMLButtonElement;
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const nameValue: string = nameInput.value;
-    const priceValue: string = priceInput.value;
-    const quantityValue: string = quantityInput.value;
+    const nameValue: string = nameInputPost.value;
+    const priceValue: string = priceInputPost.value;
+    const quantityValue: string = quantityInputPost.value;
 
     if (nameValue && priceValue && quantityValue) {
 
@@ -29,5 +29,3 @@ submitButton.addEventListener('click', (e) => {
         alert('You have to give all three values')
     }
 })
-
-export { };

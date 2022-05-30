@@ -1,14 +1,14 @@
 const confirmEditButton = document.querySelector('button.confirmEditButton') as HTMLButtonElement;
-const nameInput = document.querySelector('input.nameInput') as HTMLInputElement;
-const priceInput = document.querySelector('input.priceInput') as HTMLInputElement;
-const quantityInput = document.querySelector('input.quantityInput') as HTMLInputElement;
+const nameInputPut = document.querySelector('input.nameInput') as HTMLInputElement;
+const priceInputPut = document.querySelector('input.priceInput') as HTMLInputElement;
+const quantityInputPut = document.querySelector('input.quantityInput') as HTMLInputElement;
 
 confirmEditButton.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const nameValue: string = nameInput.value;
-    const priceValue: string = priceInput.value;
-    const quantityValue: string = quantityInput.value;
+    const nameValue: string = nameInputPut.value;
+    const priceValue: string = priceInputPut.value;
+    const quantityValue: string = quantityInputPut.value;
 
     if (nameValue && priceValue && quantityValue) {
 
