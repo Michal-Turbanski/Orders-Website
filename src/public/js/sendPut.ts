@@ -1,11 +1,7 @@
-//@ts-ignore
-const confirmEditButton: HTMLButtonElement = document.querySelector('button.confirmEditButton');
-//@ts-ignore
-const nameInput: HTMLInputElement = document.querySelector('input.nameInput');
-//@ts-ignore
-const priceInput: HTMLInputElement = document.querySelector('input.priceInput');
-//@ts-ignore
-const quantityInput: HTMLInputElement = document.querySelector('input.quantityInput');
+const confirmEditButton = document.querySelector('button.confirmEditButton') as HTMLButtonElement;
+const nameInput = document.querySelector('input.nameInput') as HTMLInputElement;
+const priceInput = document.querySelector('input.priceInput') as HTMLInputElement;
+const quantityInput = document.querySelector('input.quantityInput') as HTMLInputElement;
 
 confirmEditButton.addEventListener('click', (e) => {
     e.preventDefault();

@@ -1,11 +1,7 @@
 "use strict";
-//@ts-ignore
 const confirmEditButton = document.querySelector('button.confirmEditButton');
-//@ts-ignore
 const nameInput = document.querySelector('input.nameInput');
-//@ts-ignore
 const priceInput = document.querySelector('input.priceInput');
-//@ts-ignore
 const quantityInput = document.querySelector('input.quantityInput');
 confirmEditButton.addEventListener('click', (e) => {
     e.preventDefault();
