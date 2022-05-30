@@ -1,7 +1,5 @@
-//@ts-ignore
-const searchButton: HTMLButtonElement = document.querySelector('button.searchButton');
-//@ts-ignore
-const searchInput: HTMLInputElement = document.querySelector('input.searchInput');
+const searchButton = document.querySelector('button.searchButton') as HTMLButtonElement;
+const searchInput = document.querySelector('input.searchInput') as HTMLInputElement;
 
 searchButton.addEventListener('click', (e) => {
     e.preventDefault();
