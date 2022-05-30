@@ -1,9 +1,9 @@
-const deleteButtons = document.querySelectorAll('button.deleteButton');
+const deleteButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('button.deleteButton');
 
 
 deleteButtons.forEach((deleteButton) => {
     deleteButton.addEventListener('click', () => {
-        //@ts-ignore
+        // @ts-ignore
         axios.delete(`/api/orders/${deleteButton.value}`)
             .then(function (response: Response) {
                 console.log(response);
