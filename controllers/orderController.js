@@ -28,6 +28,8 @@ const getOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 id: req.params.id
             }
         });
+        if (!order)
+            res.sendStatus(404);
         res.json(order);
     }
     catch (error) {

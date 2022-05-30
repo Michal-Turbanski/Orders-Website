@@ -17,6 +17,7 @@ export const getOrder = async (req: Request, res: Response) => {
                 id: req.params.id
             }
         })
+        if (!order) res.sendStatus(404);
         res.json(order);
     } catch (error) {
         console.log(error);
