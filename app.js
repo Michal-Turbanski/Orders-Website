@@ -4,19 +4,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+require("colorts/lib/string");
 const createRoute_1 = require("./routes/createRoute");
 const editRoute_1 = require("./routes/editRoute");
 const mainRoute_1 = require("./routes/mainRoute");
 const orderRoutes_1 = require("./routes/orderRoutes");
 const dotenv = require('dotenv').config();
-const colors = require('colors');
 const sequelize = require('./db/dbConnect');
 const path = require('path');
 const port = Number(process.env.PORT) || 3000;
 sequelize.sync()
-    // @ts-ignore
     .then(() => console.log('DB is ready'.cyan))
-    // @ts-ignore
     .catch((err) => console.log(`${err}`.red));
 const app = (0, express_1.default)();
 app.set('view engine', 'ejs');

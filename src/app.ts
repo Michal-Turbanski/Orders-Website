@@ -1,4 +1,5 @@
 import express, { Application } from 'express';
+import 'colorts/lib/string';
 
 import { createRouter } from './routes/createRoute';
 import { editRouter } from './routes/editRoute';
@@ -6,17 +7,15 @@ import { mainRouter } from './routes/mainRoute';
 import { orderRouter } from './routes/orderRoutes';
 
 const dotenv = require('dotenv').config();
-const colors = require('colors');
+
 const sequelize = require('./db/dbConnect');
 const path = require('path');
 
 const port: number = Number(process.env.PORT) || 3000;
 
 sequelize.sync()
-    // @ts-ignore
     .then(() => console.log('DB is ready'.cyan))
-    // @ts-ignore
-    .catch((err) => console.log(`${err}`.red));
+    .catch((err: Error) => console.log(`${err}`.red));
 
 const app: Application = express();
 
