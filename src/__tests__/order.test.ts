@@ -38,4 +38,31 @@ describe('order', () => {
                 .expect(400);
         })
     })
+
+    describe('PUT order', () => {
+        it('should return 200', async () => {
+            const id: number = 2;
+            await supertest(app).put(`/api/orders/${id}`)
+                .send({ name: 'Updated Value', price: 99999, quantity: 1 })
+                .expect(200);
+        })
+    })
+
+    describe('PUT order (not all params)', () => {
+        it('should return 400 Bad Request', async () => {
+            const id: number = 2;
+            await supertest(app).put(`/api/orders/${id}`)
+                .send({ name: 'Updated Value', price: 99999 })
+                .expect(400);
+        })
+    })
+
+    describe('PUT order (not exist)', () => {
+        it('should return 404 Not Found', async () => {
+            const id: number = 404; //not exist
+            await supertest(app).put(`/api/orders/${id}`)
+                .send({ name: 'Updated Value', price: 99999, quantity: 1 })
+                .expect(404);
+        })
+    })
 })

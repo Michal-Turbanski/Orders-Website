@@ -46,4 +46,28 @@ describe('order', () => {
                 .expect(400);
         }));
     });
+    describe('PUT order', () => {
+        it('should return 200', () => __awaiter(void 0, void 0, void 0, function* () {
+            const id = 2;
+            yield (0, supertest_1.default)(app_1.app).put(`/api/orders/${id}`)
+                .send({ name: 'Updated Value', price: 99999, quantity: 1 })
+                .expect(200);
+        }));
+    });
+    describe('PUT order (not all params)', () => {
+        it('should return 400 Bad Request', () => __awaiter(void 0, void 0, void 0, function* () {
+            const id = 2;
+            yield (0, supertest_1.default)(app_1.app).put(`/api/orders/${id}`)
+                .send({ name: 'Updated Value', price: 99999 })
+                .expect(400);
+        }));
+    });
+    describe('PUT order (not exist)', () => {
+        it('should return 404 Not Found', () => __awaiter(void 0, void 0, void 0, function* () {
+            const id = 404; //not exist
+            yield (0, supertest_1.default)(app_1.app).put(`/api/orders/${id}`)
+                .send({ name: 'Updated Value', price: 99999, quantity: 1 })
+                .expect(404);
+        }));
+    });
 });
