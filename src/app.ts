@@ -1,12 +1,11 @@
 import express, { Application } from 'express';
+import 'dotenv/config';
 import 'colorts/lib/string';
 
 import { createRouter } from './routes/createRoute';
 import { editRouter } from './routes/editRoute';
 import { mainRouter } from './routes/mainRoute';
 import { orderRouter } from './routes/orderRoutes';
-
-const dotenv = require('dotenv').config();
 
 const sequelize = require('./db/dbConnect');
 const path = require('path');
