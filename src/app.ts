@@ -16,7 +16,7 @@ sequelize.sync()
     .then(() => console.log('DB is ready'.cyan))
     .catch((err: Error) => console.log(`${err}`.red));
 
-const app: Application = express();
+export const app: Application = express();
 
 app.set('view engine', 'ejs');
 
