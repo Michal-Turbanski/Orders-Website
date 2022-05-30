@@ -32,4 +32,18 @@ describe('order', () => {
             yield (0, supertest_1.default)(app_1.app).get(`/api/orders/${id}`).expect(404);
         }));
     });
+    describe('POST order', () => {
+        it('should return 201', () => __awaiter(void 0, void 0, void 0, function* () {
+            yield (0, supertest_1.default)(app_1.app).post(`/api/orders`)
+                .send({ name: 'Test Name', price: 123, quantity: 5 })
+                .expect(201);
+        }));
+    });
+    describe('POST order (not all params)', () => {
+        it('should return 400 Bad Request', () => __awaiter(void 0, void 0, void 0, function* () {
+            yield (0, supertest_1.default)(app_1.app).post(`/api/orders`)
+                .send({ name: 'Test Name BAD', price: 400 })
+                .expect(400);
+        }));
+    });
 });
