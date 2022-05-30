@@ -1,31 +1,30 @@
 "use strict";
-const { Model, DataTypes } = require("sequelize");
-//@ts-ignore
-const sequelize = require('../dbConnect');
-//@ts-ignore
-class Order extends Model {
+Object.defineProperty(exports, "__esModule", { value: true });
+const sequelize_1 = require("sequelize");
+const dbConnect_1 = require("../dbConnect");
+class Order extends sequelize_1.Model {
 }
 Order.init({
     id: {
-        type: DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
     name: {
-        type: DataTypes.STRING(50),
+        type: sequelize_1.DataTypes.STRING(50),
         allowNull: false
     },
     price: {
-        type: DataTypes.DECIMAL,
+        type: sequelize_1.DataTypes.DECIMAL,
         allowNull: false
     },
     quantity: {
-        type: DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.INTEGER,
         allowNull: false
     }
 }, {
-    sequelize,
+    sequelize: dbConnect_1.sequelize,
     modelName: 'order',
     timestamps: false
 });

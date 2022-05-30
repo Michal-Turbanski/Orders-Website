@@ -6,8 +6,8 @@ import { createRouter } from './routes/createRoute';
 import { editRouter } from './routes/editRoute';
 import { mainRouter } from './routes/mainRoute';
 import { orderRouter } from './routes/orderRoutes';
+import { sequelize } from './db/dbConnect';
 
-const sequelize = require('./db/dbConnect');
 const path = require('path');
 
 const port: number = Number(process.env.PORT) || 3000;

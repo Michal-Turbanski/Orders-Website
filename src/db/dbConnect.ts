@@ -8,9 +8,7 @@ const dbDialect = process.env.DB_DIALECT || 'sqlite';
 const dbHost = process.env.DB_HOST || './db/ordersDB.sqlite';
 
 //@ts-ignore
-const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
+export const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
     dialect: dbDialect,
     host: dbHost
 })
-
-module.exports = sequelize;

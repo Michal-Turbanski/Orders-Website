@@ -10,10 +10,10 @@ const createRoute_1 = require("./routes/createRoute");
 const editRoute_1 = require("./routes/editRoute");
 const mainRoute_1 = require("./routes/mainRoute");
 const orderRoutes_1 = require("./routes/orderRoutes");
-const sequelize = require('./db/dbConnect');
+const dbConnect_1 = require("./db/dbConnect");
 const path = require('path');
 const port = Number(process.env.PORT) || 3000;
-sequelize.sync()
+dbConnect_1.sequelize.sync()
     .then(() => console.log('DB is ready'.cyan))
     .catch((err) => console.log(`${err}`.red));
 const app = (0, express_1.default)();

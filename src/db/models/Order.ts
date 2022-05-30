@@ -1,7 +1,6 @@
-const { Model, DataTypes } = require("sequelize");
-//@ts-ignore
-const sequelize = require('../dbConnect');
-//@ts-ignore
+import { Model, DataTypes } from "sequelize";
+import { sequelize } from '../dbConnect';
+
 class Order extends Model { }
 
 Order.init({
